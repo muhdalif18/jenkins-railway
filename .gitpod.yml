@@ -1,0 +1,12 @@
+image:
+  file: .gitpod.Dockerfile
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+    visibility: public
+
+tasks:
+  - init: |
+      mkdir -p /workspace/jenkins_home
+      java -jar /usr/share/jenkins/jenkins.war --httpPort=8080
